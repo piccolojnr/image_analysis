@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+      li {
+        /* border: 1px sssssolid #111; */
+        /* margin: 1px; */
+        width: fit-content;
+        height: fit-content;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main"></div>
+
+    <script>
+      const main = document.querySelector(".main");
+      var n = 0;
+      var l = 0;
+
+      for (let i = 0; i < 4; i++) {
+        const ul = document.createElement("ul");
+        for (let j = 0; j < 4; j++) {
+          const li = document.createElement("li");
+          const image = document.createElement("img");
+          image.src = `./images/img-${n}.jpg`;
+          li.appendChild(image);
+          ul.appendChild(li);
+          console.info(n, l);
+          n += 4;
+        }
+        main.appendChild(ul);
+        l++;
+        n = l;
+      }
+    </script>
+  </body>
+</html>
